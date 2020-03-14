@@ -6,7 +6,7 @@ target 'EventsSS' do
   use_frameworks!
 
   # Pods for EventsSS
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.9.1'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
 

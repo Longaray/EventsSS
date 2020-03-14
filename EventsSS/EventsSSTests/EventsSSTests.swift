@@ -30,5 +30,69 @@ class EventsSSTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+        
+    //Testa retorno da api
+    func testService_GetEventos() {
+        
+        let expectation = self.expectation(description: "getEventos")
+        let request = Service()
+        var eventosList = [Event]()
+        request.getEventos(completionHandler: {eventos,error  in
+                guard error == nil else {
+                    return
+                }
+                eventosList = eventos ?? []
+                expectation.fulfill()
+                //XCTAssertGreaterThan(eventosList.count, 0)
+            })
+        
+         waitForExpectations(timeout: 5, handler: nil)
+
+        XCTAssertGreaterThan(eventosList.count, [].count)
+         
+    }
+
+    //Testa post da api
+    func testService_PostEvento() {
+        
+        let expectation = self.expectation(description: "postEventos")
+        
+        let request = Service()
+        
+        let parameters = [
+            "eventId": "1",
+            "name": "test",
+            "email": "test@email.com"
+        ]
+        
+        var resposta = ""
+        
+        request.postEvento(parameters: parameters as [String : Any], completionHandler: {response,error  in
+            guard error == nil else {
+                return
+            }
+            
+            switch response?.result {
+                            case .success:
+                                resposta = "Sucesso"
+                                expectation.fulfill()
+                                break
+                            case .failure(let error):
+                                resposta = "Falha"
+                                expectation.fulfill()
+                            case .none:
+                                resposta = "Falha"
+                                expectation.fulfill()
+                            }
+                 
+            
+        })
+        
+         waitForExpectations(timeout: 5, handler: nil)
+
+         XCTAssertEqual(resposta, "Sucesso")
+         
+    }
 
 }
