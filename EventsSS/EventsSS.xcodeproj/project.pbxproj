@@ -10,7 +10,6 @@
 		1C0361E46A3611849B7FDDCB /* Pods_EventsSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AA2DEEF040B040B56C1E8D /* Pods_EventsSS.framework */; };
 		5B0C1D8F241D781A00C80CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1D8E241D781A00C80CD4 /* AppDelegate.swift */; };
 		5B0C1D91241D781A00C80CD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1D90241D781A00C80CD4 /* SceneDelegate.swift */; };
-		5B0C1D93241D781B00C80CD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1D92241D781B00C80CD4 /* ContentView.swift */; };
 		5B0C1D95241D781D00C80CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0C1D94241D781D00C80CD4 /* Assets.xcassets */; };
 		5B0C1D98241D781D00C80CD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0C1D97241D781D00C80CD4 /* Preview Assets.xcassets */; };
 		5B0C1D9B241D781D00C80CD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0C1D99241D781D00C80CD4 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,9 @@
 		5B0C1DB5241D7D2500C80CD4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1DB4241D7D2500C80CD4 /* Event.swift */; };
 		5B0C1DB7241D7DD600C80CD4 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1DB6241D7DD600C80CD4 /* People.swift */; };
 		5B0C1DB9241D808600C80CD4 /* Cupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C1DB8241D808600C80CD4 /* Cupon.swift */; };
+		5BE929CB241E579900939221 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929CA241E579900939221 /* EventViewController.swift */; };
+		5BE929D1241E6E0D00939221 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929D0241E6E0D00939221 /* EventCell.swift */; };
+		5BE929D4241EB52800939221 /* UIView-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929D3241EB52800939221 /* UIView-Ext.swift */; };
 		D5F5529D04C72D086F70BEA0 /* Pods_EventsSSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712CE3119971358BD3E12308 /* Pods_EventsSSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +41,6 @@
 		5B0C1D8B241D781A00C80CD4 /* EventsSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0C1D8E241D781A00C80CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B0C1D90241D781A00C80CD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B0C1D92241D781B00C80CD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B0C1D94241D781D00C80CD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B0C1D97241D781D00C80CD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B0C1D9A241D781D00C80CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		5B0C1DB4241D7D2500C80CD4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5B0C1DB6241D7DD600C80CD4 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		5B0C1DB8241D808600C80CD4 /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
+		5BE929CA241E579900939221 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		5BE929D0241E6E0D00939221 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		5BE929D3241EB52800939221 /* UIView-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Ext.swift"; sourceTree = "<group>"; };
 		712CE3119971358BD3E12308 /* Pods_EventsSSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsSSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AA2DEEF040B040B56C1E8D /* Pods_EventsSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59C807394F17F9CFDBEF56A /* Pods-EventsSSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsSSTests.release.xcconfig"; path = "Target Support Files/Pods-EventsSSTests/Pods-EventsSSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,10 +126,11 @@
 				5B0C1DB3241D7BCB00C80CD4 /* Controller */,
 				5B0C1DBA241D841F00C80CD4 /* Delegate */,
 				5B0C1DB2241D7BC200C80CD4 /* Model */,
-				5B0C1D92241D781B00C80CD4 /* ContentView.swift */,
+				5BE929C9241D9AC400939221 /* View */,
 				5B0C1D94241D781D00C80CD4 /* Assets.xcassets */,
 				5B0C1D99241D781D00C80CD4 /* LaunchScreen.storyboard */,
 				5B0C1D9C241D781D00C80CD4 /* Info.plist */,
+				5BE929D2241EB4DF00939221 /* Util */,
 				5B0C1D96241D781D00C80CD4 /* Preview Content */,
 			);
 			path = EventsSS;
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5B0C1DB0241D7ABC00C80CD4 /* Service.swift */,
+				5BE929CA241E579900939221 /* EventViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +179,22 @@
 				5B0C1D8E241D781A00C80CD4 /* AppDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		5BE929C9241D9AC400939221 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BE929D0241E6E0D00939221 /* EventCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BE929D2241EB4DF00939221 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5BE929D3241EB52800939221 /* UIView-Ext.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,10 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0C1DB9241D808600C80CD4 /* Cupon.swift in Sources */,
+				5BE929D4241EB52800939221 /* UIView-Ext.swift in Sources */,
 				5B0C1D8F241D781A00C80CD4 /* AppDelegate.swift in Sources */,
 				5B0C1DB1241D7ABC00C80CD4 /* Service.swift in Sources */,
 				5B0C1D91241D781A00C80CD4 /* SceneDelegate.swift in Sources */,
-				5B0C1D93241D781B00C80CD4 /* ContentView.swift in Sources */,
+				5BE929D1241E6E0D00939221 /* EventCell.swift in Sources */,
+				5BE929CB241E579900939221 /* EventViewController.swift in Sources */,
 				5B0C1DB7241D7DD600C80CD4 /* People.swift in Sources */,
 				5B0C1DB5241D7D2500C80CD4 /* Event.swift in Sources */,
 			);
