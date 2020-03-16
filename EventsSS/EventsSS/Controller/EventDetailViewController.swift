@@ -38,7 +38,7 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
     
     func configureEventDetail()
     {
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBlue
         view.addSubview(eventImg)
         view.addSubview(eventTitle)
         view.addSubview(eventDate)

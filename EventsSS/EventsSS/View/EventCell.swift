@@ -17,7 +17,7 @@ class EventCell: UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         addSubview(eventImageView)
         addSubview(eventTitlelbl)
-        
+        self.backgroundColor = UIColor.white.withAlphaComponent(0)
         configureImageView()
         configureTitleLabel()
         configureCellConstraints()
@@ -36,6 +36,8 @@ class EventCell: UITableViewCell {
     {
         eventTitlelbl.numberOfLines = 0
         eventTitlelbl.adjustsFontSizeToFitWidth = true
+        eventTitlelbl.textColor = .white
+        eventTitlelbl.font = UIFont.boldSystemFont(ofSize: 16)
     }
     
     func set(event: EventViewModel){
@@ -68,7 +70,7 @@ class EventCell: UITableViewCell {
         //Title
         eventTitlelbl.translatesAutoresizingMaskIntoConstraints = false
         eventTitlelbl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        eventTitlelbl.leadingAnchor.constraint(equalTo: eventImageView.leadingAnchor, constant: 20).isActive = true
+        eventTitlelbl.leadingAnchor.constraint(equalTo: eventImageView.trailingAnchor, constant: 12).isActive = true
         eventTitlelbl.heightAnchor.constraint(equalToConstant: 80).isActive = true
         eventTitlelbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
         

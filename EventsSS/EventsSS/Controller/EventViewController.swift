@@ -20,19 +20,20 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
    override func viewDidLoad() {
         super.viewDidLoad()
-    
-    
         super.navigationItem.title = "Eventos"
+        view.backgroundColor = .systemBlue
         configureTableView()
         fetchData()
     }
     
     func configureTableView(){
         view.addSubview(tbtTable)
+        
         setTableViewDelegate()
         tbtTable.rowHeight = 100
         tbtTable.register(EventCell.self, forCellReuseIdentifier: Cells.eventCell)
         tbtTable.pin(to: view)
+        tbtTable.backgroundColor = UIColor.white.withAlphaComponent(0)
         
     }
     
