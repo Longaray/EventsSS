@@ -41,6 +41,10 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         view.backgroundColor = .systemPink
         view.addSubview(eventImg)
         view.addSubview(eventTitle)
+        view.addSubview(eventDate)
+        view.addSubview(eventPrice)
+        view.addSubview(eventDescription)
+        view.addSubview(eventCheckIn)
         
         configureUIComponents()
         configureEventDetailConstraints()
@@ -130,8 +134,8 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
     func setData()
     {
         eventTitle.text = self.eventoLocal.title
-        eventDate.text = self.eventoLocal.date
-        eventPrice.text = self.eventoLocal.price
+        eventDate.text = "Data: " + self.eventoLocal.date
+        eventPrice.text = "Preço: " + self.eventoLocal.price
         eventDescription.text =  self.eventoLocal.description
         
         self.eventImg.image = UIImage(named: "notAvailable")
@@ -151,11 +155,35 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
     
     func configureUIComponents(){
         
+        eventImg.layer.cornerRadius = 10
+        eventImg.clipsToBounds = true
+        
         eventTitle.numberOfLines = 0
         eventTitle.adjustsFontSizeToFitWidth = true
         eventTitle.textAlignment = .center
         eventTitle.textColor = .white
         eventTitle.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        eventCheckIn.setTitle("CheckIn", for: .normal)
+        eventCheckIn.titleLabel?.textColor = .white
+        eventCheckIn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        eventCheckIn.backgroundColor = .blue
+        eventCheckIn.layer.cornerRadius = 10
+        
+        eventDate.numberOfLines = 0
+        eventDate.adjustsFontSizeToFitWidth = true
+        eventDate.textColor = .white
+        eventDate.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        eventPrice.numberOfLines = 0
+        eventPrice.adjustsFontSizeToFitWidth = true
+        eventPrice.textAlignment = .right
+        eventPrice.textColor = .white
+        eventPrice.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        eventDescription.textColor = .white
+        eventDescription.font = UIFont.boldSystemFont(ofSize: 16)
+        eventDescription.backgroundColor = UIColor.white.withAlphaComponent( 0)
     }
     
     func configureEventDetailConstraints(){
@@ -174,8 +202,42 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         eventTitle.topAnchor.constraint(equalTo: eventImg.bottomAnchor, constant: 2).isActive = true
         eventTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         eventTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
-        eventTitle.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        eventTitle.heightAnchor.constraint(equalToConstant: 60).isActive = true
         eventTitle.widthAnchor.constraint(equalTo: eventImg.heightAnchor, multiplier: 16/9).isActive = true
+        
+        //CheckIn
+        eventCheckIn.translatesAutoresizingMaskIntoConstraints = false
+        eventCheckIn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        eventCheckIn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 2).isActive = true
+        eventCheckIn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
+        eventCheckIn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        eventCheckIn.heightAnchor.constraint(equalToConstant: 60).isActive = true
+
+        //Date
+        eventDate.translatesAutoresizingMaskIntoConstraints = false
+        eventDate.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        eventDate.bottomAnchor.constraint(equalTo: eventCheckIn.topAnchor, constant: 2).isActive = true
+        eventDate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
+        eventDate.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        eventDate.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        //Price
+        eventPrice.translatesAutoresizingMaskIntoConstraints = false
+        eventPrice.bottomAnchor.constraint(equalTo: eventCheckIn.topAnchor, constant: 2).isActive = true
+        eventPrice.leadingAnchor.constraint(equalTo: eventDate.trailingAnchor, constant: 12).isActive = true
+        eventPrice.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        eventPrice.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        eventPrice.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        
+        //Description
+        eventDescription.translatesAutoresizingMaskIntoConstraints = false
+        eventDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        eventDescription.topAnchor.constraint(equalTo: eventTitle.bottomAnchor, constant: 20).isActive = true
+        eventDescription.bottomAnchor.constraint(equalTo: eventDate.topAnchor, constant: -12).isActive = true
+        eventDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
+        eventDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        eventDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
+        eventDescription.widthAnchor.constraint(equalTo: eventImg.heightAnchor, multiplier: 16/9).isActive = true
          
     }
 
