@@ -11,7 +11,7 @@ import UIKit
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tbtTable = UITableView()
-    var eventosList :Array<Event>  = []
+    var eventosList = [EventViewModel]()
     private var request = Service()
     
     struct Cells{
@@ -47,8 +47,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             guard error == nil else {
                 return
             }
-            self.eventosList = eventos ?? []
-
+            self.eventosList += eventos?.map({return EventViewModel(evento: $0)}) ?? []
             self.tbtTable.reloadData()
         })
     }
@@ -60,14 +59,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = self.tbtTable.dequeueReusableCell(withIdentifier: Cells.eventCell) as! EventCell
-        let event = self.eventosList[indexPath.row]
-        cell.set(event: event)
+        let eventViewModel = self.eventosList[indexPath.row]
+        cell.set(event: eventViewModel)
+        
         return cell
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        let controller = EventDetailViewController()
+        controller.setEvento(evento: self.eventosList[indexPath.row])
 
+        self.navigationController!.pushViewController( controller, animated: true )
+        
     }
     
     override func didReceiveMemoryWarning()

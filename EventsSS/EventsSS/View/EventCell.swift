@@ -38,9 +38,9 @@ class EventCell: UITableViewCell {
         eventTitlelbl.adjustsFontSizeToFitWidth = true
     }
     
-    func set(event: Event){
+    func set(event: EventViewModel){
         
-        let url = URL(string: event.image!)
+        let url = URL(string: event.imageURL)
         if(url != nil)
         {
             DispatchQueue.global().async { [weak self] in
