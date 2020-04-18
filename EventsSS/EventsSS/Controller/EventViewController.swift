@@ -34,6 +34,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tbtTable.register(EventCell.self, forCellReuseIdentifier: Cells.eventCell)
         tbtTable.pin(to: view)
         tbtTable.backgroundColor = UIColor.white.withAlphaComponent(0)
+        tbtTable.separatorStyle = .none
         
     }
     
@@ -62,7 +63,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = self.tbtTable.dequeueReusableCell(withIdentifier: Cells.eventCell) as! EventCell
         let eventViewModel = self.eventosList[indexPath.row]
         cell.set(event: eventViewModel)
-        
+        cell.selectionStyle = .none
         return cell
     }
  
@@ -70,7 +71,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         let controller = EventDetailViewController()
         controller.setEvento(evento: self.eventosList[indexPath.row])
-
+        
         self.navigationController!.pushViewController( controller, animated: true )
         
     }

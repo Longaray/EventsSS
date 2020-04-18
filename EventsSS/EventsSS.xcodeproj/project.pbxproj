@@ -22,6 +22,7 @@
 		5BE929D4241EB52800939221 /* UIView-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929D3241EB52800939221 /* UIView-Ext.swift */; };
 		5BE929D6241EC37800939221 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929D5241EC37800939221 /* EventDetailViewController.swift */; };
 		5BE929D9241EC5E400939221 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE929D8241EC5E400939221 /* EventViewModel.swift */; };
+		A34A86EB244B2A6D001EE049 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A86EA244B2A6D001EE049 /* CustomNavigationController.swift */; };
 		B3948C385F64A7042A65DA9A /* Pods_EventsSSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAEB5D11FA778628DBFBF85 /* Pods_EventsSSTests.framework */; };
 		DBD7717C70B61F98744B4762 /* Pods_EventsSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591992C78925850EBB365078 /* Pods_EventsSS.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		5BE929D8241EC5E400939221 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		5CCA7587A851BD0572899666 /* Pods-EventsSSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsSSTests.release.xcconfig"; path = "Target Support Files/Pods-EventsSSTests/Pods-EventsSSTests.release.xcconfig"; sourceTree = "<group>"; };
 		83ABB30AF0E19386FFE3141E /* Pods-EventsSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsSS.release.xcconfig"; path = "Target Support Files/Pods-EventsSS/Pods-EventsSS.release.xcconfig"; sourceTree = "<group>"; };
+		A34A86EA244B2A6D001EE049 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				5B0C1DB0241D7ABC00C80CD4 /* Service.swift */,
 				5BE929CA241E579900939221 /* EventViewController.swift */,
 				5BE929D5241EC37800939221 /* EventDetailViewController.swift */,
+				A34A86EA244B2A6D001EE049 /* CustomNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34A86EB244B2A6D001EE049 /* CustomNavigationController.swift in Sources */,
 				5B0C1DB9241D808600C80CD4 /* Cupon.swift in Sources */,
 				5BE929D4241EB52800939221 /* UIView-Ext.swift in Sources */,
 				5B0C1D8F241D781A00C80CD4 /* AppDelegate.swift in Sources */,

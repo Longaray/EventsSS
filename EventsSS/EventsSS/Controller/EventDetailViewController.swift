@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol UITableViewControllerDelegate{
-    func setEvento(evento: EventViewModel)
-}
-
-class EventDetailViewController : UIViewController , UITableViewControllerDelegate{
+class EventDetailViewController : UIViewController{
  
     var eventImg = UIImageView()
     var eventTitle = UILabel()
@@ -20,7 +16,6 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
     var eventPrice = UILabel()
     var eventDescription =  UITextView()
     var eventCheckIn = UIButton()
-    var delegate:UITableViewControllerDelegate?
     
     var eventoLocal: EventViewModel!
     private var request = Service()
@@ -51,11 +46,11 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         setData()
     }
     
-    @IBAction func backButton(_ sender: Any) {
+    @objc func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func checkInButton(_ sender: Any) {
+    @objc func checkInButton(_ sender: Any) {
         checkInDialog()
     }
 
@@ -137,7 +132,7 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         eventDate.text = "Data: " + self.eventoLocal.date
         eventPrice.text = "Preço: " + self.eventoLocal.price
         eventDescription.text =  self.eventoLocal.description
-        
+        eventDescription.isEditable = false
         self.eventImg.image = UIImage(named: "notAvailable")
         let url = URL(string: self.eventoLocal.imageURL)
         if(url != nil){
@@ -153,7 +148,23 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         }
     }
     
+    @objc func shareEventButton(_ sender: Any)
+    {
+
+        let imageToShare = [eventImg.image!]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+
+        activityViewController.excludedActivityTypes = [
+            UIActivity.ActivityType.airDrop
+        ]
+
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     func configureUIComponents(){
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(shareEventButton))
         
         eventImg.layer.cornerRadius = 10
         eventImg.clipsToBounds = true
@@ -193,7 +204,6 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         eventImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
         eventImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         eventImg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
-        eventImg.heightAnchor.constraint(equalToConstant: 200).isActive = true
         eventImg.widthAnchor.constraint(equalTo: eventImg.heightAnchor, multiplier: 16/9).isActive = true
         
         //Title
@@ -213,21 +223,19 @@ class EventDetailViewController : UIViewController , UITableViewControllerDelega
         eventCheckIn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
         eventCheckIn.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
+        
         //Date
         eventDate.translatesAutoresizingMaskIntoConstraints = false
         eventDate.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         eventDate.bottomAnchor.constraint(equalTo: eventCheckIn.topAnchor, constant: 2).isActive = true
         eventDate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         eventDate.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        eventDate.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         //Price
         eventPrice.translatesAutoresizingMaskIntoConstraints = false
         eventPrice.bottomAnchor.constraint(equalTo: eventCheckIn.topAnchor, constant: 2).isActive = true
-        eventPrice.leadingAnchor.constraint(equalTo: eventDate.trailingAnchor, constant: 12).isActive = true
         eventPrice.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
         eventPrice.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        eventPrice.widthAnchor.constraint(equalToConstant: 180).isActive = true
         
         //Description
         eventDescription.translatesAutoresizingMaskIntoConstraints = false
